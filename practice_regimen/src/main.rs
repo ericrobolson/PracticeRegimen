@@ -4,24 +4,34 @@ use rand::Rng;
 
 fn main() {
     // Guitar regimen
+    let note = get_random_note();
     music_theory_reading();
     tune_instrument();
     learn_fretboard();
-    play_scales_and_chords();
-    learn_intervals();
+    learn_intervals(note);
+    play_scales_and_chords(note);
     circle_of_fifths();
-
-    play_songs();
+    play_songs(note);
+    improv();
 }
 
 fn circle_of_fifths() {
     todo!("Somehow learn circle of fifths. Pg. 19.");
 }
-fn play_songs() {
-    todo!()
+fn play_songs(note: Note) {
+    println!("Site reading: play a song from the list that matches the key.");
+    println!("Play a song(s) you're focusing on.");
+    todo!("Should it instead matches the key?");
 }
-fn play_scales_and_chords() {
-    println!("Pick a random key.");
+pub fn improv() {
+    println!("Using scale that was generated, improvise over a backing track.");
+    println!(
+        "It should pull from various chord changes then suggest a mode to use for each chord."
+    );
+    todo!("This needs to be a bit more detailed.");
+}
+fn play_scales_and_chords(note: Note) {
+    println!("Pick a random key for {note}.");
 
     // Scale + mode training
     println!("Do this for each mode:");
@@ -33,10 +43,10 @@ fn play_scales_and_chords() {
     println!("\nStrum that chord.");
     println!("\nPlay the arpeggio for each chord in a vertical fashion.");
     println!("\nPlay the arpeggio for each chord in a horizontal fashion.");
+    println!("\nRepeat for each inversion and list it.");
 }
 
-fn learn_intervals() {
-    println!("Pick a random fret on the neck.");
+fn learn_intervals(note: Note) {
     println!("Use the shapes on pg 26 to play the intervals.");
     println!("This needs to do fig 5 and fig 6 on pg 26.");
     println!("Play all simple intervals in Music Theory pg 25");
